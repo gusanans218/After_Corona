@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1C1C41"
+        tools:context=".view.SplashActivity">
+
+        <ImageView
+            android:id="@+id/splash_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logo"
+            android:layout_marginTop="195dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="After Corona"
+            android:textColor="@color/white"
+            android:fontFamily="@font/tfile_bold"
+            android:textSize="27dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/splash_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/splash_kotitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="코로나가 끝나면"
+            android:textColor="@color/white"
+            android:fontFamily="@font/tfile"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/splash_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/splash_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copyright © COTA"
+            android:textColor="#DADADA"
+            android:fontFamily="@font/applesdgothicm"
+            android:textSize="12dp"
+            android:layout_marginTop="210dp"
+            app:layout_constraintTop_toBottomOf="@id/splash_kotitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
