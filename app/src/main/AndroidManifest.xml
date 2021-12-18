@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".view.DeviceLinkageActivity"
+            android:name=".view.SignupActivity"
             android:exported="true" />
         <activity
             android:name=".view.LoginActivity"
@@ -25,7 +25,7 @@
             android:name=".view.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".view.SignupActivity"
+            android:name=".view.DeviceLinkageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
