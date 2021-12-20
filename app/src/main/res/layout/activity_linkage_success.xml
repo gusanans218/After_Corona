@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.example.after_corona.view.LinkageSuccessActivity" />
+        
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.LinkageSuccessActivity">
+
+
+        <TextView
+            android:id="@+id/linkage_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device Linkage"
+            android:textSize="30dp"
+            android:textColor="#87A1F8"
+            android:fontFamily="@font/tfile_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="125dp"/>
+
+        <TextView android:id="@+id/linkage_timecapsule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:fontFamily="@font/applesdgothicm"
+            android:text="Time Capsule"
+            android:textColor="#5679F0"
+            android:layout_marginStart="82dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/linkage_title"/>
+
+        <TextView android:id="@+id/linkage_device_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:fontFamily="@font/applesdgothicm"
+            android:text="디바이스가 연동되었습니다."
+            android:textColor="#707070"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@id/linkage_timecapsule"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/linkage_title"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/linkage_success"
+            app:layout_constraintTop_toBottomOf="@id/linkage_timecapsule"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="130dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

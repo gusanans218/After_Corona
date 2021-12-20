@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".view.MainBottomActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main_bottom" />
+        <activity
+            android:name=".view.LinkageSuccessActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.SignupActivity"
             android:exported="true" />
         <activity

@@ -1,53 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="activity"
+            type="com.example.after_corona.view.DeviceLinkageActivity" />
     </data>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="300dp"
+    <FrameLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:background="@drawable/background_dialog"
+        android:layout_height="144dp">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="블루투스 연동 요청"
+        android:fontFamily="@font/applesdgothicm"
+        android:textSize="13dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/dialog_content"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="8dp">
+            android:text="Time Capsule 디바이스를 연동할까요?"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@font/applesdgothicm"
+            android:textSize="14dp"/>
 
-            <TextView
-                android:id="@+id/content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:text="텍스트" />
+        <Button
+            android:id="@+id/dialog_cancel_btn"
+            android:layout_width="70dp"
+            android:layout_height="28dp"
+            android:background="@drawable/background_dialog_cancel_btn"
+            android:text="취소"
+            android:fontFamily="@font/applesdgothicm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_content"
+            android:layout_marginStart="129dp"
+            android:layout_marginTop="18dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/ok"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:text="확인" />
-
-                <Button
-                    android:id="@+id/cancel"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:text="취소" />
+        <Button
+            android:id="@+id/dialog_ok_btn"
+            android:layout_width="70dp"
+            android:layout_height="28dp"
+            android:background="@drawable/background_devicelink_btn"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:fontFamily="@font/applesdgothicm"
+            app:layout_constraintStart_toEndOf="@+id/dialog_cancel_btn"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"/>
 
 
-            </LinearLayout>
 
 
-        </LinearLayout>
-
-    </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 </layout>
