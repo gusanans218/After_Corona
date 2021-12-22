@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.HomeFragment">
+    tools:context=".view.CapsuleSuccessFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/main_toolbar"
@@ -40,65 +40,26 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
     </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="52dp"
-            android:background="#4D000000"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/main_timecapsule"
+        <TextView
+            android:id="@+id/success_title"
+            android:text="Success!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="152dp"
-            android:background="@drawable/background_main_capsule"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="30dp"
+            android:fontFamily="@font/tfile_bold"
+            android:layout_marginTop="130dp"
+            android:layout_marginStart="40dp"
+            android:textColor="#4949AA"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-        <TextView
-            android:id="@+id/main_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/applesdgothicb"
-            android:text="곧 열릴 타임 캡슐이 없네요. \n지금 만들어 볼까요?"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="17dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_timecapsule" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="254dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="45dp"
-            android:background="@drawable/background_main_btn"
-            android:fontFamily="@font/applesdgothicb"
-            android:text="캡슐 작성하기"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_tv" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </FrameLayout>

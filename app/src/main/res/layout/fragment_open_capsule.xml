@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.HomeFragment">
+    tools:context=".view.OpenCapsuleFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/main_toolbar"
@@ -77,9 +77,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/applesdgothicb"
-            android:text="곧 열릴 타임 캡슐이 없네요. \n지금 만들어 볼까요?"
+            android:text="오늘은 타임 캡슐을 여는 날입니다!\n추억을 확인해보세요."
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="#5E83FF"
             android:textSize="17dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,9 +89,9 @@
             android:layout_width="254dp"
             android:layout_height="40dp"
             android:layout_marginTop="45dp"
-            android:background="@drawable/background_main_btn"
+            android:background="@drawable/background_opencapsule_btn"
             android:fontFamily="@font/applesdgothicb"
-            android:text="캡슐 작성하기"
+            android:text="캡슐 오픈하기"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
