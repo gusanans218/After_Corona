@@ -12,7 +12,7 @@ import com.example.after_corona.databinding.ActivityLinkageSuccessBinding
 import com.example.after_corona.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+
         binding.bn.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_calendar -> binding.vp.currentItem = 0
@@ -39,7 +40,11 @@ class MainActivity : AppCompatActivity() {
                 else -> binding.vp.currentItem = 2 }
             true
         }
+    binding.bn.selectedItemId = R.id.menu_home
+
+
     }
+
     inner class ViewPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
         override fun getItemCount() = 3
         override fun createFragment(position: Int): Fragment {
@@ -48,8 +53,11 @@ class MainActivity : AppCompatActivity() {
                 1 -> HomeFragment()
                 else -> UserFragment()
             }
+
         }
+
     }
+
 }
 
 
