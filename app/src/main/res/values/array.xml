@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_array">
+        <item>현재로부터 1개월 후</item>
+        <item>현재로부터 2개월 후</item>
+        <item>현재로부터 3개월 후</item>
+        <item>현재로부터 6개월 후</item>
+        <item>현재로부터 1년 후</item>
+    </string-array>
+</resources>
