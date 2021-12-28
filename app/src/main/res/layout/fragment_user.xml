@@ -1,14 +1,368 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.UserFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.example.after_corona.view.UserFragment" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="User" />
+        tools:context=".view.UserFragment">
 
-</FrameLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/main_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="110dp"
+                    android:fontFamily="@font/tfile_bold"
+                    android:text="After Corona"
+                    android:textColor="@color/bottom"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:background="@drawable/ic_baseline_notifications_24"
+                    app:layout_constraintStart_toEndOf="@+id/main_toolbar_title"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <View
+                android:id="@+id/user_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="52dp"
+                android:background="#4D000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/tfile_extrabold"
+                android:text="My Page"
+                android:textColor="#4949AA"
+                android:textSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_line" />
+
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_mypage_circle"
+                app:layout_constraintTop_toBottomOf="@+id/user_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:id="@+id/user_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="리코타"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_image"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/tfile"
+                android:textSize="19dp"/>
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="leecota@naver.com"
+                android:fontFamily="@font/tfile"
+                app:layout_constraintTop_toBottomOf="@id/user_username"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:textColor="#C4C4C4"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_btn_1"
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:elevation="10dp"
+                android:background="@drawable/background_user_btn"
+                app:layout_constraintTop_toBottomOf="@+id/user_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp">
+
+               <ImageView
+                   android:id="@+id/user_btn_notification"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:background="@drawable/ic_baseline_notifications_241"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                   android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_btn_notification_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="알림 및 소리"
+                    android:textColor="#3F3D56"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_notification"
+                    android:layout_marginTop="8dp"
+                    android:textSize="15dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+                <TextView
+                    android:id="@+id/user_btn_notification_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="앱 내 메시지 알림 및 소리 설정"
+                    android:textColor="#959595"
+                    app:layout_constraintTop_toBottomOf="@+id/user_btn_notification_title"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_notification"
+                    android:layout_marginTop="3dp"
+                    android:textSize="13dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_btn_2"
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:elevation="10dp"
+                android:background="@drawable/background_user_btn"
+                app:layout_constraintTop_toBottomOf="@+id/user_btn_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/user_btn_privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_baseline_lock_24"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_btn_privacy_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보 및 보안"
+                    android:textColor="#3F3D56"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_privacy"
+                    android:layout_marginTop="8dp"
+                    android:textSize="15dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+                <TextView
+                    android:id="@+id/user_btn_privacy_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="비밀번호 및 Touch ID"
+                    android:textColor="#959595"
+                    app:layout_constraintTop_toBottomOf="@+id/user_btn_privacy_title"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_privacy"
+                    android:layout_marginTop="3dp"
+                    android:textSize="13dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_btn_3"
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:elevation="10dp"
+                android:background="@drawable/background_user_btn"
+                app:layout_constraintTop_toBottomOf="@+id/user_btn_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/user_btn_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_baseline_dark_mode_24"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_btn_dark_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다크모드"
+                    android:textColor="#3F3D56"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_dark"
+                    android:layout_marginTop="20dp"
+                    android:textSize="15dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/ic_baseline_toggle_off_24"
+                  app:layout_constraintStart_toEndOf="@id/user_btn_dark_title"
+                  app:layout_constraintTop_toTopOf="@id/user_btn_3"
+                  android:layout_marginStart="130dp"
+                  android:layout_marginTop="15dp"/>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_btn_4"
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:elevation="10dp"
+                android:background="@drawable/background_user_btn"
+                app:layout_constraintTop_toBottomOf="@+id/user_btn_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/user_btn_privacyedit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_baseline_account_circle_24"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_btn_privacyedit_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보"
+                    android:textColor="#3F3D56"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_privacyedit"
+                    android:layout_marginTop="8dp"
+                    android:textSize="15dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+                <TextView
+                    android:id="@+id/user_btn_privacyedit_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보 수정"
+                    android:textColor="#959595"
+                    app:layout_constraintTop_toBottomOf="@+id/user_btn_privacyedit_title"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_privacyedit"
+                    android:layout_marginTop="3dp"
+                    android:textSize="13dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_btn_5"
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:elevation="10dp"
+                android:background="@drawable/background_user_btn"
+                app:layout_constraintTop_toBottomOf="@+id/user_btn_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/user_btn_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_room_service"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_btn_error_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="알림 및 소리"
+                    android:textColor="#3F3D56"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_error"
+                    android:layout_marginTop="8dp"
+                    android:textSize="15dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+                <TextView
+                    android:id="@+id/user_btn_error_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="앱 내 메시지 알림 및 소리 설정"
+                    android:textColor="#959595"
+                    app:layout_constraintTop_toBottomOf="@+id/user_btn_error_title"
+                    app:layout_constraintStart_toEndOf="@+id/user_btn_error"
+                    android:layout_marginTop="3dp"
+                    android:textSize="13dp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/tfile"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+</layout>

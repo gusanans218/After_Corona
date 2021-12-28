@@ -26,10 +26,10 @@
                 android:layout_height="wrap_content"
                 android:text="Time Capsule 기록을 완료할까요?"
                 app:layout_constraintTop_toTopOf="parent"
-
+                android:textColor="#10103F"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="47dp"
                 android:fontFamily="@font/applesdgothicm"
                 android:textSize="14dp"/>
 
@@ -42,21 +42,21 @@
                 android:fontFamily="@font/applesdgothicm"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/dialog_content"
-                android:layout_marginStart="129dp"
-                android:layout_marginTop="18dp"/>
+                android:layout_marginStart="73dp"
+                android:layout_marginTop="23dp"/>
 
             <Button
                 android:id="@+id/dialog_ok_btn"
                 android:layout_width="70dp"
                 android:layout_height="28dp"
-                android:background="@drawable/background_devicelink_btn"
+                android:background="@drawable/background_privacy_ok_btn"
                 android:text="확인"
                 android:textColor="@color/white"
                 android:fontFamily="@font/applesdgothicm"
                 app:layout_constraintStart_toEndOf="@+id/dialog_cancel_btn"
                 app:layout_constraintTop_toBottomOf="@+id/dialog_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="18dp"/>
+                android:layout_marginTop="23dp"/>
 
 
 

@@ -116,15 +116,15 @@
                 app:layout_constraintTop_toBottomOf="@id/signup_password_title"
                 app:passwordToggleEnabled="true">
 
-                <EditText
+            <EditText
 
-                    android:id="@+id/passwordcontent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:background="@drawable/signup_line"
-                    android:inputType="textPassword"
-                    android:hint="비밀번호를 입력하세요." />
+                android:id="@+id/passwordcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:background="@drawable/signup_line"
+                android:inputType="textPassword"
+                android:hint="비밀번호를 입력하세요." />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView

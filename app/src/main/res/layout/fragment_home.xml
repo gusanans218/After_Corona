@@ -4,6 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <import type="android.view.View" />
         <variable
             name="fragment"
             type="com.example.after_corona.view.HomeFragment" />
