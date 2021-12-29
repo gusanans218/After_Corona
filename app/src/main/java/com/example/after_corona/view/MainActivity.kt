@@ -2,14 +2,15 @@ package com.example.after_corona.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.after_corona.R
-import com.example.after_corona.databinding.ActivityLinkageSuccessBinding
 import com.example.after_corona.databinding.ActivityMainBinding
+import com.example.after_corona.view.fragment.CalendarFragment
+import com.example.after_corona.view.fragment.HomeFragment
+import com.example.after_corona.view.fragment.UserFragment
 
 class MainActivity : AppCompatActivity() {
      val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }

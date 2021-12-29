@@ -154,39 +154,6 @@
 
 
                 </RelativeLayout>
-                <TextView
-                    android:id="@+id/write_capsule_opentime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="88dp"
-                    android:textColor="#000000"
-                    android:fontFamily="@font/applesdgothicb"
-                    android:text="캡슐 해제시간"
-                    android:textSize="15sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/write_relat" />
-
-                <ImageView
-                    android:id="@+id/write_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_baseline_info_24"
-                    app:layout_constraintStart_toEndOf="@+id/write_capsule_opentime"
-                    app:layout_constraintTop_toBottomOf="@id/write_relat"
-                    android:layout_marginTop="86dp"
-                    android:layout_marginStart="6dp"/>
-
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/write_spinner"
-                    android:layout_width="280dp"
-                    android:layout_height="50dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="20dp"
-                    spinner.prompt = "제목입니다."
-                    android:background="@drawable/background_write_spinner"
-                    app:layout_constraintTop_toBottomOf="@id/write_capsule_opentime"/>
 
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -195,7 +162,7 @@
                     android:layout_height="46dp"
                     android:text="확인"
                     android:textColor="@color/white"
-                    app:layout_constraintTop_toBottomOf="@+id/write_spinner"
+                    app:layout_constraintTop_toBottomOf="@+id/write_relat"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginTop="50dp"

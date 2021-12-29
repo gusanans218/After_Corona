@@ -1,6 +1,5 @@
-package com.example.after_corona.view
+package com.example.after_corona.view.fragment
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.after_corona.R
 import com.example.after_corona.databinding.FragmentHomeBinding
+import com.example.after_corona.view.WriteCapsuleActivity
 
 class HomeFragment : Fragment() {
 

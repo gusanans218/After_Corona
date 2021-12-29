@@ -1,4 +1,4 @@
-package com.example.after_corona.view
+package com.example.after_corona.view.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.after_corona.R
-import com.example.after_corona.databinding.FragmentHomeBinding
 import com.example.after_corona.databinding.FragmentUserBinding
+import com.example.after_corona.view.PrivacyActivity
 
 
 class UserFragment : Fragment() {

@@ -26,42 +26,15 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
 
         binding.writeOkBtn.setOnClickListener(this)
 
-        val items = resources.getStringArray(R.array.my_array)
-        val myAapter = ArrayAdapter(this, R.layout.item_spinner, items)
-        val myAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, items)
-        binding.writeSpinner.adapter = myAapter
 
-        binding.writeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
-                position: Int,
-                id: Long
-            ) {
 
-                when (position) {
-                    0 -> {
 
-                    }
-                    1 -> {
 
-                    }
-                    //...
-                    else -> {
-
-                    }
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-
-            }
         }
-    }
 
-
-    override fun onClick(v: View) {
+    override fun onClick(v: View?) {
         when (v?.id) {
+
             binding.writeOkBtn.id -> {
                 if ((mDialogView.parent as ViewGroup?) != null) {
                     (mDialogView.parent as ViewGroup?)!!.removeView(mDialogView)
@@ -84,15 +57,13 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
                 builder.window?.requestFeature(Window.FEATURE_NO_TITLE)
                 builder.setCanceledOnTouchOutside(true)
                 builder.window?.setGravity(Gravity.CENTER)
-
-
                 builder.show()
             }
-
         }
-
     }
 }
+
+
 
 
 
