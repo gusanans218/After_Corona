@@ -5,6 +5,8 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -25,6 +27,21 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
         binding.activity = this
 
         binding.writeOkBtn.setOnClickListener(this)
+
+
+        binding.writeCapsuleContent.addTextChangedListener(object  : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                binding.writeCount.text = "${binding.writeCapsuleContent.text.toString().count()}/80자"
+
+            }
+
+        })
 
 
 

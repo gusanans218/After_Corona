@@ -3,25 +3,61 @@ package com.example.after_corona.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.after_corona.R
 import com.example.after_corona.databinding.ActivitySignup2Binding
 import com.example.after_corona.databinding.ActivitySignupBinding
+import com.example.after_corona.view.viewmodel.SignupViewModel
 
 class Signup2Activity : AppCompatActivity() {
     private val binding by lazy { ActivitySignup2Binding.inflate(layoutInflater) }
+    val viewModel : SignupViewModel by lazy {
+
+        ViewModelProvider(this).get(SignupViewModel::class.java)
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.activity = this
 
+
         binding.signupBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            if (binding.signupName.text.toString().trim()
+                    .isNotEmpty() && binding.signupPhonenumbercontent.text.toString().trim()
+                    .isNotEmpty()
+            ) {
+                viewModel.signup(
+                    id = intent.getStringExtra("signupId") ?: "",
+                    name = binding.signupName.text.toString().trim(),
+                    phoneNumber =binding.signupPhonenumbercontent.text.toString().trim(),
+                    password = intent.getStringExtra("passwordContent") ?: "",
+                    duraction = 600000,
+                    callbackUrl = "https://www.naver.com/"
+                )
+
+
+            }
+            intent.getStringExtra("signupId")
+            intent.getStringExtra("passwordContent")
+
+
         }
+        viewModel.onSuccessEvent.observe(this, Observer {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        })
 
         binding.yesaccount2.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+
+        }
+        binding.signupCertificationOk.setOnClickListener {
+            val dialogUp = PhoneDialog(this,binding.signupName.text.toString().trim())
+            dialogUp.show()
         }
     }
 }
