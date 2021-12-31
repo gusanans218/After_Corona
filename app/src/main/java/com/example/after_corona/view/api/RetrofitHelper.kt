@@ -19,8 +19,12 @@ class RetrofitHelper {
             return instance.retrofit                                        // 레트로핏 반환
         }
 
-        fun getAPI(rt: Retrofit) : SignupInterface {
+        fun getSignupAPI(rt: Retrofit) : SignupInterface {
             return rt.create(SignupInterface::class.java)                               // API 반환
+        }
+
+        fun getLoginAPI(rt: Retrofit) : LoginInterface {
+            return rt.create(LoginInterface::class.java)                               // API 반환
         }
     }
 

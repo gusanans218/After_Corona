@@ -190,7 +190,7 @@
             android:layout_marginTop="32dp"
             android:background="@drawable/background_signup_btn"
             android:fontFamily="@font/applesdgothicm"
-            android:text="회원가입"
+            android:text="다음"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="14dp"

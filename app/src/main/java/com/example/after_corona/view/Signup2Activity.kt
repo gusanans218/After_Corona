@@ -35,7 +35,7 @@ class Signup2Activity : AppCompatActivity() {
                     phoneNumber =binding.signupPhonenumbercontent.text.toString().trim(),
                     password = intent.getStringExtra("passwordContent") ?: "",
                     duraction = 600000,
-                    callbackUrl = "https://www.naver.com/"
+                    callbackUrl = "https://key-del-jeeinho.github.io/after-corona-api/Welcome.html"
                 )
 
 
