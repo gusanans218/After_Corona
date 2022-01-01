@@ -29,7 +29,6 @@ class SignupViewModel: ViewModel() {
 
                     }
                     else{
-                        onSuccessEvent.call()
                         Log.d(TAG, response.code().toString())
                     }
 

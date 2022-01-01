@@ -26,6 +26,9 @@ class RetrofitHelper {
         fun getLoginAPI(rt: Retrofit) : LoginInterface {
             return rt.create(LoginInterface::class.java)                               // API 반환
         }
+        fun getTodoAPI(rt: Retrofit) : TodoInterface {
+            return rt.create(TodoInterface::class.java)                               // API 반환
+        }
     }
 
     private val okHttpClient: OkHttpClient = OkHttpClient.Builder()

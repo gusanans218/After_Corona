@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.after_corona.view.data.ListData" />
+            type="com.example.after_corona.view.data.GetTodoData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

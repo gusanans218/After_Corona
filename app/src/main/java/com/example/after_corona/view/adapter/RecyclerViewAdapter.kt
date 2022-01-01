@@ -7,15 +7,16 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.after_corona.databinding.ItemListBinding
+import com.example.after_corona.view.data.GetTodoData
 import com.example.after_corona.view.data.ListData
 
 class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
-    var datalist = mutableListOf<ListData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity등에서 datalist에 실제 데이터 추가
+    var datalist = mutableListOf<GetTodoData>()//리사이클러뷰에서 사용할 데이터 미리 정의 -> 나중에 MainActivity등에서 datalist에 실제 데이터 추가
 
     inner class MyViewHolder(private val binding: ItemListBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(listData: ListData){
+        fun bind(listData: GetTodoData){
             binding.item = listData
             binding.listContent.text= listData.message
             Log.d(TAG, "bindT: ${datalist.size}")

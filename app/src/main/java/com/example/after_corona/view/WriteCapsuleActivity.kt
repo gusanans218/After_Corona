@@ -11,18 +11,26 @@ import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.after_corona.R
 import com.example.after_corona.databinding.ActivityDeviceLinkageBinding
 import com.example.after_corona.databinding.ActivityLoginBinding
 import com.example.after_corona.databinding.ActivityWriteCapsuleBinding
+import com.example.after_corona.view.viewmodel.TodoViewModel
 
 class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
     private val binding by lazy { ActivityWriteCapsuleBinding.inflate(layoutInflater) }
     private lateinit var mDialogView: View
+    val viewModel:TodoViewModel by lazy {
+        ViewModelProvider(this).get(TodoViewModel::class.java)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mDialogView = LayoutInflater.from(this).inflate(R.layout.write_dialog, null)
+
         setContentView(binding.root)
         binding.activity = this
 
@@ -43,7 +51,20 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
 
         })
 
+        viewModel.onSuccessEvent.observe(this, Observer {
+            if (binding.writeCapsuleName1.text.toString().trim()
+                    .isNotEmpty() && binding.writeCapsuleContent.text.toString().trim()
+                    .isNotEmpty()&& binding.writeCapsuleContent.text.toString().trim()
+                    .count() >= 1 && binding.writeCapsuleContent.text.toString().trim().count() <= 80 ) {
+                val intent = Intent(this, CapsuleSuccessActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else
+            {
+                Toast.makeText(this, "제목이나 내용이 비어있습니다~", Toast.LENGTH_SHORT).show()            }
 
+        })
 
 
 
@@ -63,11 +84,18 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
                     .create()
 
                 mDialogView.findViewById<Button>(R.id.dialog_ok_btn).setOnClickListener {
-                    val intent = Intent(this, CapsuleSuccessActivity::class.java)
-                    startActivity(intent)
+                viewModel.postTodo(
+                    description = binding.writeCapsuleContent.text.toString().trim(),
+                    title = binding.writeCapsuleName1.text.toString().trim()
+
+                )
+
+
 
                     builder.dismiss()
                 }
+
+
 
 
                 builder.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -76,8 +104,14 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
                 builder.window?.setGravity(Gravity.CENTER)
                 builder.show()
             }
+
+
+
         }
+
+
     }
+
 }
 
 
