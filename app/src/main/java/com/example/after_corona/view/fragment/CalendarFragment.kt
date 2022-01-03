@@ -48,7 +48,6 @@ class CalendarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initializelist()
-        viewModel.getTodo()
         Log.d(TAG, "onViewCreated: calender Fragment 호출")
     }
 
@@ -58,10 +57,19 @@ class CalendarFragment : Fragment() {
         adapter.datalist = mDatas //데이터 넣어줌
         binding.recyclerView.adapter = adapter //리사이클러뷰에 어댑터 연결
         binding.recyclerView.layoutManager = LinearLayoutManager(context) //레이아웃 매니저 연결
+        adapter.notifyDataSetChanged()
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getTodo()
     }
 
     fun initializelist() { //임의로 데이터 넣어서 만들어봄
         viewModel.list.observe(viewLifecycleOwner, Observer{
+            mDatas.clear()
             mDatas.addAll(it)
             initListRecyclerView()
         })
