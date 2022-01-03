@@ -36,6 +36,9 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
 
         binding.writeOkBtn.setOnClickListener(this)
 
+        binding.writeToolbarBack.setOnClickListener {
+            finish()
+        }
 
         binding.writeCapsuleContent.addTextChangedListener(object  : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -64,6 +67,10 @@ class WriteCapsuleActivity : AppCompatActivity(),View.OnClickListener {
             {
                 Toast.makeText(this, "제목이나 내용이 비어있습니다~", Toast.LENGTH_SHORT).show()            }
 
+        })
+
+        viewModel.onFailureEvent.observe(this, Observer{
+            Toast.makeText(this,"통신 에러가 발생하였습니다",Toast.LENGTH_SHORT).show()
         })
 
 

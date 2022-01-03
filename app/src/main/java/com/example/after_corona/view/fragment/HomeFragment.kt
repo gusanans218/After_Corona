@@ -7,13 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.after_corona.R
 import com.example.after_corona.databinding.FragmentHomeBinding
 import com.example.after_corona.view.WriteCapsuleActivity
+import com.example.after_corona.view.viewmodel.HomeViewModel
+import com.example.after_corona.view.viewmodel.TodoViewModel
 
 class HomeFragment : Fragment() {
 
     lateinit var binding :FragmentHomeBinding
+    val viewModel: HomeViewModel by lazy {
+        ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,8 +31,11 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
         binding.fragment =this
         binding.lifecycleOwner = this
+        initializelist()
 
-        binding.homeBtn.setOnClickListener {
+        viewModel.getUser()
+
+            binding.homeBtn.setOnClickListener {
             val intent = Intent(requireContext(), WriteCapsuleActivity::class.java)
             startActivity(intent)
         }
@@ -32,6 +43,21 @@ class HomeFragment : Fragment() {
     }
 
     fun goAddCap(){
+
+    }
+    fun initializelist() { //임의로 데이터 넣어서 만들어봄
+        viewModel.onCoronaEndSuccessEvent.observe(viewLifecycleOwner, Observer {
+            binding.openCapsuleFragment.visibility = View.VISIBLE
+            binding.writeCapsuleFragment.visibility = View.GONE
+        })
+
+        viewModel.onCoronaEndFailureEvent.observe(viewLifecycleOwner, Observer {
+            binding.openCapsuleFragment.visibility = View.GONE
+            binding.writeCapsuleFragment.visibility = View.VISIBLE
+        })
+
+
+
 
     }
 

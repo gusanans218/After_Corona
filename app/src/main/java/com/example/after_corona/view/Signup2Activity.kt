@@ -3,6 +3,7 @@ package com.example.after_corona.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.after_corona.R
@@ -48,6 +49,10 @@ class Signup2Activity : AppCompatActivity() {
         viewModel.onSuccessEvent.observe(this, Observer {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+        })
+
+        viewModel.onFailureEvent.observe(this, Observer {
+            Toast.makeText(this,"통신 에러가 발생하였습니다",Toast.LENGTH_SHORT).show()
         })
 
         binding.yesaccount2.setOnClickListener {

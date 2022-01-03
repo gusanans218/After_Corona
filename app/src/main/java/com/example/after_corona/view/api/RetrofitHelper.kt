@@ -29,6 +29,13 @@ class RetrofitHelper {
         fun getTodoAPI(rt: Retrofit) : TodoInterface {
             return rt.create(TodoInterface::class.java)                               // API 반환
         }
+        fun getHomeAPI(rt: Retrofit) : HomeInterface {
+            return rt.create(HomeInterface::class.java)                               // API 반환
+        }
+
+        fun getUserAPI(rt: Retrofit) : UserInterface {
+            return rt.create(UserInterface::class.java)                               // API 반환
+        }
     }
 
     private val okHttpClient: OkHttpClient = OkHttpClient.Builder()
@@ -44,3 +51,4 @@ class RetrofitHelper {
         .build()                                                            // 레트로핏 객체 생성
 
 }
+

@@ -17,6 +17,7 @@ class SignupViewModel: ViewModel() {
     val retrofit = RetrofitHelper.getRetrofit(retrofitHelper)   // 레트로핏 객체 생성
     val api = RetrofitHelper.getSignupAPI(retrofit)
     val onSuccessEvent = SingleLiveEvent<Unit>()
+    val onFailureEvent = SingleLiveEvent<Unit>()
 
 
     fun signup(id : String, name : String, password : String, phoneNumber:String,duraction: Int,callbackUrl:String){
@@ -35,6 +36,7 @@ class SignupViewModel: ViewModel() {
                 }
 
                 override fun onFailure(call: Call<Void>, t: Throwable) {
+                    onFailureEvent.call()
 
                 }
 

@@ -19,6 +19,7 @@ class LoginViewModel: ViewModel() {
     val retrofit = RetrofitHelper.getRetrofit(retrofitHelper)   // 레트로핏 객체 생성
     val api = RetrofitHelper.getLoginAPI(retrofit)
     val onSuccessEvent = SingleLiveEvent<Unit>()
+    val onFailureEvent = SingleLiveEvent<Unit>()
 
 
     fun login(id: String, rawPassword: String){
@@ -38,7 +39,7 @@ class LoginViewModel: ViewModel() {
                 }
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-
+                        onFailureEvent.call()
                 }
 
             })

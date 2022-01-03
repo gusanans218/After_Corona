@@ -22,6 +22,7 @@ class TodoViewModel: ViewModel() {
     val retrofit = RetrofitHelper.getRetrofit(retrofitHelper)   // 레트로핏 객체 생성
     val api = RetrofitHelper.getTodoAPI(retrofit)
     val onSuccessEvent = SingleLiveEvent<Unit>()
+    val onFailureEvent = SingleLiveEvent<Unit>()
     private val _list = MutableLiveData<List<GetTodoData>>()
     val list : LiveData<List<GetTodoData>>
         get() = _list
@@ -47,8 +48,8 @@ class TodoViewModel: ViewModel() {
                 }
 
                 override fun onFailure(call: Call<TodoResponse>, t: Throwable) {
+                    onFailureEvent.call()
                 }
-
             })
 
 
