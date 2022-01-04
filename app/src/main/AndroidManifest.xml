@@ -37,13 +37,13 @@
             android:name=".view.Signup2Activity"
             android:exported="true" />
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".view.SignupActivity"
             android:exported="true" />
         <activity
             android:name=".view.DeviceLinkageActivity"
             android:exported="true" />
         <activity
-            android:name=".view.SignupActivity"
+            android:name=".view.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
